@@ -20,11 +20,44 @@ fs.mkdir('./docs', (err) => {
 }
 
 
-// fs.readFile('example.txt', 'utf8', (err, data) => {
-//     if (err) {
-         //console.error('Error reading file:', err);
-//         return;
-//     }
-//     console.log('File contents:', data);
-// });
- 
+fs.writeFile('./docs/example.txt', 'here is the text', (err) => {
+    if (err) {
+        console.log(err.message);
+    }
+    else{ 
+    console.log('File created and text written successfully');
+    }
+});
+
+if( fs.existsSync('./docs/example.txt')) {
+    fs.readFile('./docs/example.txt', 'utf8', (err, data) => {
+    if (err) {
+        console.log(err.message);
+    }
+    else{
+    console.log('File read successfully: ', data.toString());
+    }
+});
+}
+
+
+if( fs.existsSync('./docs/example.txt')) {
+    fs.unlink('./docs/example.txt', (err) => {
+    if (err) {
+        console.log(err.message);   
+    }
+    else{
+    console.log('File deleted successfully');
+    }
+});
+}
+
+fs.rmdir('./docs', (err) => {
+    if (err) {
+        console.log(err.message);
+    }
+    else{
+    console.log('Directory deleted successfully');
+    }
+});
+
