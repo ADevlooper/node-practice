@@ -52,6 +52,7 @@ if( fs.existsSync('./docs/example.txt')) {
 });
 }
 
+if( fs.existsSync('./docs/example.txt')){
 fs.rmdir('./docs', (err) => {
     if (err) {
         console.log(err.message);
@@ -60,4 +61,4 @@ fs.rmdir('./docs', (err) => {
     console.log('Directory deleted successfully');
     }
 });
-
+}

@@ -7,7 +7,7 @@ const requestListener = (req, res) => {
 
     if (url === '/' && method === 'GET') {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Working Fine');
+    res.end('<h1>Working Fine</h1>');
     return;
     }
 
