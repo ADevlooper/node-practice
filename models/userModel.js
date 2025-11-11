@@ -3,6 +3,7 @@ let users = [
   { id: 2, name: 'John' }
 ];
 
+
 module.exports = {
   getAllUsers: () => users,
   addUser: (user) => users.push(user)
